@@ -2,6 +2,7 @@ import { FaRegBookmark } from "react-icons/fa6";
 
 const Blog = ({ blg, handleBookmarks, handleMarkAsRead }) => {
   const {
+    id,
     title,
     cover,
     author,
@@ -13,7 +14,7 @@ const Blog = ({ blg, handleBookmarks, handleMarkAsRead }) => {
   return (
     <div>
       <br />
-      <div className="border border-red-300 grid gap-5">
+      <div className="grid gap-5">
         <img className="w-full h-[500px]" src={cover} alt="" />
         <div className="flex justify-between items-center">
           <div>
@@ -38,7 +39,7 @@ const Blog = ({ blg, handleBookmarks, handleMarkAsRead }) => {
               </span>
             ))}
           </p>
-          <button onClick={() => handleMarkAsRead(reading_time)} className="text-purple-900 underline">Mark as read</button>
+          <button onClick={() => handleMarkAsRead(reading_time, id)} className="text-purple-900 underline">Mark as read</button>
         </div>
       </div>
     </div>
