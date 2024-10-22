@@ -1,5 +1,7 @@
-const Blog = ({ blg }) => {
-  console.log(blg);
+import { FaRegBookmark } from "react-icons/fa6";
+
+const Blog = ({ blg, handleBookmarks }) => {
+  
   const {
     title,
     cover,
@@ -19,13 +21,24 @@ const Blog = ({ blg }) => {
             <img src={author_img} alt="" />
             <div>
               <h3 className="font-bold">{author}</h3>
-              <p className="text-gray-500">{posted_date}</p>
+              <p className="text-gray-500">Date: {posted_date}</p>
             </div>
           </div>
-          <p className="text-gray-500 flex gap-2">{reading_time} read <img src="https://img.icons8.com/?size=24&id=82461&format=png" alt="" /></p>
+          <div className="flex gap-2">
+            <p className="text-gray-500">{reading_time} read</p>
+            <button onClick={() => handleBookmarks(blg)}>
+              <FaRegBookmark></FaRegBookmark>
+            </button>
+          </div>
         </div>
         <h2 className="text-5xl">{title}</h2>
-        <p className="text-gray-500">{hashtags}</p>
+        <p className="text-gray-500">
+          {hashtags.map((hash, idx) => (
+            <span key={idx}>
+              <a href="">{hash}</a>
+            </span>
+          ))}
+        </p>
       </div>
     </div>
   );
