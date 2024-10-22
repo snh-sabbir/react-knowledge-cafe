@@ -13,7 +13,7 @@ const Blogs = () => {
         <div className="md:w-2/3">
             <h1 className="text-4xl">Blogs: {blogs.length}</h1>
             {
-                blogs.map(blog=><Blog key={blog.id} blg={blog}></Blog>)
+                blogs.map(blog => <Blog key={blog.id} blg={blog}></Blog>)
             }
         </div>
     );

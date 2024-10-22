@@ -6,10 +6,12 @@ import Header from "./components/Header/Header";
 function App() {
   return (
     <>
-      <Header></Header>
-      <div className="md:flex">
-        <Blogs></Blogs>
-        <Bookmarks></Bookmarks>
+      <div className="w-10/12 mx-auto">
+        <Header></Header>
+        <div className="flex justify-between gap-10">
+          <Blogs></Blogs>
+          <Bookmarks></Bookmarks>
+        </div>
       </div>
     </>
   );
